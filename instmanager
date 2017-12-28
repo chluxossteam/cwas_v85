@@ -123,32 +123,11 @@ _setDefault()
 }
 addInst() { 
 
-    #INSTROOT=`pwd` 
-    #INSTDIR=${INSTROOT}/instance/${INSTNAME}
-    #CONFDIR="conf/"  
-    #CONFIG="sia.conf"
-    #CONF=${CONFDIR}${CONFIG}    
-    
-    #if [ ! -f .javaopts ]; then  
-    #    echo -e "\e[31mCiritical] No file for setup JAVA_OTPS . Please run installer first\e[0m" 
-    #    exit;
-    #fi  
-
     if [ -d ${INSTDIR} ]; then  
         echo "Already exist Instance name (${INSTNAME})"
-        #echo "Exit script" 
 		echo ""
         exit
     fi  
-	#declare -l temp_instname
-	#declare -l temp_cwasuser 
-	#temp_instname=${INSTNAME}
-	#temp_cwasuser=${CWAS_USER}
-	#if [ ${temp_instname} == ${temp_cwasuser} ]; then 
-	#	echo "Cannot create instnace name same as was owner"
-	#	echo ""
-	#	exit
-	#fi 
 
     echo "INSTNACE NAME : " ${INSTNAME}""  
     echo -n "SERVICE IP : (default : ${serviceip}) : " 
@@ -276,8 +255,6 @@ _usageprint()
 } 
 chkOwner()
 {
-    #UNAME=`id -u -n`
-
     if [ $UNAME != ${CWAS_USER} ]; then
         echo "  Start failure WAS service. WAS control allow to [ ${CWAS_USER} ] user"
         exit
