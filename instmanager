@@ -104,7 +104,7 @@ _setjavaopt()
         #OPT="export \"JAVA_OPTS=\$JAVA_OPTS -Xms128m -Xmx1024m -XX:PermSize=128m -XX:MaxPermSize=1024m\""
     fi  
 	
-	FIXEDOPT="export \"JAVA_OPTS=\$JAVA_OPTS -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=70 -Xloggc:${INSTDIR}/gclogs/gc.log -Djava.awt.headless=true -Dcom.sun.management.jmxremote\""
+	FIXEDOPT="export \"JAVA_OPTS=\$JAVA_OPTS -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC -XX:+UseParNewGC -XX:+UseConcMarkSweepGC  -XX:CMSInitiatingOccupancyFraction=70 -Xloggc:${INSTDIR}/gclogs/gc.log -Djava.awt.headless=true -Dcom.sun.management.jmxremote\""
     
     echo -e "export \"JAVA_OPTS=\"\"\""  > .javaopts
 	echo -e "export JAVA_HOME=${temp_java_home}" >> .javaopts
